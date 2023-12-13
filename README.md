@@ -9,6 +9,8 @@ Deux algorithmes de recherche sont à votre disposition : l'algorithme Naïf et 
 
 
 **## ATTENTION ##**
+
 **Si votre ordinateur n'est pas très performant, préférez utiliser la base de données V2. Elle est bien moins grande que la V3 et ne ralentira pas autant votre ordinateur.**
+
 
 *Ceci est un projet de cours, quelques erreurs peuvent être présentes.*
