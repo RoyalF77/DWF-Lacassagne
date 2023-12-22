@@ -90,7 +90,7 @@ def Boyer_Moore_Horspool(motif, texte):
     for i in range(len(texte)-1,0,-1):
         if len(motif) == 1 and texte[i] == motif[0]:
             return True
-        elif texte[i] in motif and texte[i] == motif[len(motif)-1] and texte[i] not in Interdit:
+        elif texte[i] in motif and texte[i] == motif[len(motif)-1]:
             j = dico[texte[i]]
             while texte[i] == motif[j]:
                 i -= 1
@@ -109,6 +109,7 @@ if __name__ == "__main__":
     while lower_phrase(selection) != 'naif' and lower_phrase(selection) != 'boyer moore horspool':
         selection = input("Mode incorrect, ressaisissez le : ")
     if lower_phrase(selection) == 'naif':
+        print("Test de l'algorithme Naif :")
         print("True :",Naif("Attempt",txt1))
         print("True :",Naif("LeFt FoOtEd",txt1))
         print("False :",Naif("sside",txt1))
@@ -119,8 +120,9 @@ if __name__ == "__main__":
         print("True :",Naif("J.Z",txt2))
         print("True :",Naif("9",txt2))
         print("False :",Naif("TopologieArbritielPasDuToutConnuMaisQuiExisteLaTerreEstPlatePourInformation:)",txt3_chaos))
-        print("True : ",Naif("平ら","地球は平らではない。"))
+        print("True :",Naif("平ら","地球は平らではない。"))
     else:
+        print("Test de l'algorithme Boyer Moore Horspool :")
         print("True :",Boyer_Moore_Horspool("Attempt",txt1))
         print("True :",Boyer_Moore_Horspool("LeFt FoOtEd",txt1))
         print("False :",Boyer_Moore_Horspool("sside",txt1))
@@ -131,4 +133,4 @@ if __name__ == "__main__":
         print("True :",Boyer_Moore_Horspool("J.Z",txt2))
         print("True :",Boyer_Moore_Horspool("9",txt2))
         print("False :",Boyer_Moore_Horspool("TopologieArbritielPasDuToutConnuMaisQuiExisteLaTerreEstPlatePourInformation:)",txt3_chaos))
-        print("True : ",Boyer_Moore_Horspool("平ら","地球は平らではない。"))
+        print("True :",Boyer_Moore_Horspool("平ら","地球は平らではない。"))
